@@ -1,211 +1,177 @@
 # Pool Wind Sun — Generative Art
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://reyrove.github.io/Pool-Wind-Sun-Generative-Art)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-> **Generative wave simulation art with fluid dynamics.** Each refresh creates a unique pool of rippling waves with oscillating patterns, resembling wind moving across water under sunlight.
-
-## 🎨 Live Demo
-
-<div align="center">
-  <a href="https://reyrove.github.io/Pool-Wind-Sun-Generative-Art" target="_blank">
-    <img src="demo-screenshot.jpg" alt="Pool Wind Sun Website Demo" width="800" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);"/>
-  </a>
-  <br><br>
-  <a href="https://reyrove.github.io/Pool-Wind-Sun-Generative-Art" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_View_Live_Demo-0a0a0a?style=for-the-badge&logo=githubpages&logoColor=white&color=c9a84c" alt="View Live Demo" width="300"/>
-  </a>
-  <br>
-  <em>Click the image or button to experience the generative art</em>
-</div>
-
-## 👕 Apparel Preview
-
-<div align="center">
-  <img src="Pool-Wind-Sun.jpg" alt="Pool Wind Sun on T-Shirt" width="600" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);"/>
-  <br>
-  <em>Pool Wind Sun artwork printed on a T-shirt</em>
-</div>
-
-## ✨ Features
-
-- **Wave Simulation** — Physics-based fluid dynamics with oscillating patterns
-- **Dynamic Grid** — 350-550 cell grid with random dimensions
-- **Oscillating Points** — 1-380+ wave sources creating ripples
-- **Gradient Colors** — Beautiful sunset-inspired color transitions
-- **Variable Scale** — Random scaling creates unique compositions
-- **Save & Share** — Download as PNG
-- **Apparel Mode** — Preview artwork on a T-shirt mockup
-- **Responsive** — Works on desktop, tablet, and mobile
-- **Pure JavaScript** — Built without external libraries
-- **Keyboard Shortcuts**:
-  - `R` — Regenerate
-  - `S` — Save image
-  - `T` — Toggle apparel view
-  - `Space` — Regenerate
-
-## 🎨 Artwork Details
-
-| Parameter | Range | Description |
-|-----------|-------|-------------|
-| **Grid Columns** | 350–400 | Horizontal resolution |
-| **Grid Rows** | 340–390 | Vertical resolution |
-| **Oscillators** | 1–380+ | Wave source points |
-| **Wave Speed (c)** | Variable | Propagation speed |
-| **Time Steps** | 30–70 | Simulation duration |
-| **Scale Factor** | 0.75–1.0 | Canvas scaling |
-| **Background** | 30–230 | Dark to light backgrounds |
-
-## 🎯 Color Gradients
-
-The artwork features dynamic gradient colors that shift based on wave amplitude:
-
-| Position | Color Range |
-|----------|-------------|
-| **Top (Low amplitude)** | Deep blues (10-50, 180-255, 200-255) |
-| **Bottom (High amplitude)** | Warm oranges and pinks (50-90, 200-255, 150-210) |
-| **Wave Peaks** | Bright highlights (255, 255, 255) |
-| **Wave Troughs** | Deeper, richer colors |
-
-### Color Behavior
-- Base colors shift from blue at the top to warm tones at the bottom
-- Wave height adds brightness and reduces opacity
-- Creates a sunset-over-water effect
-- Alpha channel varies with wave amplitude for depth
-
-## 🚀 Quick Start
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/reyrove/Pool-Wind-Sun-Generative-Art.git
-
-# Navigate to the directory
-cd Pool-Wind-Sun-Generative-Art
-
-# Open in browser
-open index.html
-# or use a live server
-```
-
-### Deploy to GitHub Pages
-
-1. Push to GitHub
-2. Go to Settings → Pages
-3. Select branch `main` and root folder
-4. Your site will be live at `https://reyrove.github.io/Pool-Wind-Sun-Generative-Art`
-
-## 🧠 How It Works
-
-The artwork simulates wave propagation using the 2D wave equation:
-
-### Physics Simulation
-
-1. **Wave Equation**: 
-   ```
-   ∂²u/∂t² = c²(∂²u/∂x² + ∂²u/∂y²)
-   ```
-   Where `u` is wave height, `c` is wave speed
-
-2. **Numerical Method**:
-   - Finite difference method on a 2D grid
-   - Second-order accurate in space and time
-   - Stable for given timestep `dt`
-
-3. **Oscillators**:
-   - Randomly placed point sources
-   - Each oscillates at unique frequency
-   - Creates interference patterns
-
-4. **Boundary Conditions**:
-   - Reflective boundaries
-   - Waves bounce off edges
-   - Creates complex standing wave patterns
-
-### Color Mapping
-
-- Wave height mapped to 0-1 range
-- Gradient based on grid position (x,y)
-- Amplitude adds brightness
-- Alpha channel creates transparency effect
-
-## 📁 File Structure
-
-```
-Pool-Wind-Sun-Generative-Art/
-├── index.html          # Main application (all-in-one)
-├── Pool-Wind-Sun.jpg   # T-shirt mockup image
-├── fav.svg             # Favicon
-├── demo-screenshot.jpg # Website demo screenshot
-├── README.md           # This file
-└── LICENSE             # MIT License
-```
-
-## 🛠️ Tech Stack
-
-- **Pure JavaScript** — No external libraries
-- **Canvas API** — 2D rendering with transparency
-- **CSS Flexbox/Grid** — Responsive layout
-- **GitHub Pages** — Hosting
-
-## 🎯 Interactive Controls
-
-| Action | Keyboard | Button |
-|--------|----------|--------|
-| Regenerate | `R` or `Space` | Click "regenerate" |
-| Save Image | `S` | Click "regenerate" |
-| Toggle Apparel | `T` | Click "apparel" |
-
-## 🎨 The Creative Process
-
-### Wave Physics
-The artwork uses the 2D wave equation to simulate realistic wave propagation. Multiple oscillating point sources create interference patterns, mimicking wind rippling across a pool of water.
-
-### Organic Patterns
-Random oscillator placement and frequencies generate unique, organic wave patterns every time. The interference of multiple waves creates complex, beautiful ripple effects.
-
-### Color Palette
-The gradient color scheme transitions from cool blues at the top to warm oranges and pinks at the bottom, creating a sunset reflection effect on the water surface.
-
-### Amplitude Mapping
-Wave height is mapped to both color brightness and opacity, creating depth and dimensionality. Higher waves appear brighter and more opaque, while lower waves are softer and more transparent.
-
-## 📱 Responsive Design
-
-The application automatically adapts to:
-- Desktop screens
-- Tablets
-- Mobile phones
-- Landscape orientation
-- Various aspect ratios
-- Small screens (down to 380px wide)
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Fork the repository
-- Create a feature branch
-- Submit a pull request
-
-### Ideas for Contributions:
-- Additional color palettes
-- Different boundary conditions
-- Animation features
-- Interactive controls
-- Performance optimizations
-- More apparel mockups
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by wave physics and fluid dynamics
-- Named for the gentle interaction of pool, wind, and sun
-- Special thanks to the creative coding community
+> A seed-based generative system for wave-simulation compositions.  
+> A reproducible catalogue of computational interference studies.
 
 ---
 
-**Built with ❤️ and wave dreams**
+## What is this?
+
+**Pool Wind Sun** is a generative design system built on the 2D wave equation — the classical model of ripples on a still surface. One or several oscillating sources strike a rectangular pool; the resulting waves reflect off the boundaries and interfere with one another, producing a complex field of constructive and destructive nodes.
+
+Every artwork in this catalogue is defined by a single numeric seed. The same seed always produces the identical composition — making each piece **traceable, reproducible, and licensable** across textile, print, and apparel applications.
+
+Named for the three conditions that shape a ripple — the *pool* that holds it, the *wind* that stirs it, and the *sun* that lights it — **Pool Wind Sun** reframes wave interference as a textile.
+
+---
+
+## Live
+
+🌐 **[View the catalogue →](https://reyrove.github.io/Pool-Wind-Sun/)**
+
+---
+
+## The System
+
+The generator combines two layers:
+
+| Layer | Description |
+|-------|-------------|
+| **Wave field** | A 2D wave equation stepped forward 30–70 times across a grid of 350–400 columns. |
+| **Oscillators** | One or more seeded sources that inject oscillating values into the field, producing ripples that interfere. |
+
+Both layers are driven by the same seed, ensuring deterministic output.
+
+### Parameters
+
+- **Grid columns** — 350 to 400
+- **Grid rows** — derived from columns (offset by −10 to +10)
+- **Oscillators** — `random × 0.002 × cols × rows + 1`
+- **Wave speed** — `w / 200` to `w / 80`, seeded
+- **Time step** — 0.04 to 0.06
+- **Simulation length** — 30 to 70 iterations
+- **Scale factor** — 0.75 to 1.00 (the pool fills most of the canvas)
+- **Background tone** — 30 to 230 in RGB
+- **Palette** — a diagonal gradient from deep blue to bright cyan, with a highlight for high-energy cells
+
+---
+
+## Structure
+
+```
+Pool-Wind-Sun/
+├── index.html              ← Full catalogue (single-file)
+├── images/
+│   ├── fav.svg
+│   ├── pool-tote.png
+│   ├── pool-cushion.png
+│   └── ...
+├── Pool-Wind-Sun.jpg       ← Apparel mockup
+└── README.md
+```
+
+The entire project is contained in a single `index.html` — no build step, no dependencies, no framework. Open it in any modern browser.
+
+---
+
+## Features
+
+- **Seed-based generation** — every composition is deterministic and reproducible
+- **Live catalogue** — cover, statement, plate, surfaces, process, archive, commission sections
+- **Multiple surfaces** — print, scarf, textile, wallpaper — all rendered from the same seed
+- **Archive of 8 seeds** — click any plate to load it into the main view
+- **PNG export** — download any composition directly from the browser
+- **Keyboard shortcuts** — `R` for new seed, `S` to save
+- **Legal modal** — licensing, terms, and credits built in
+- **Responsive** — works on desktop, tablet, and mobile
+- **Mobile-first navbar** — horizontally scrollable with fade hint
+- **Fast load** — master offscreen rendering + cached thumbnail simulations
+
+---
+
+## Usage
+
+### Generate a new composition
+
+Click **New Seed** or press `R`.
+
+### Download the current composition
+
+Click **Download** or press `S`.
+
+### Load a seed from the archive
+
+Click any plate in the **Archive** section.
+
+---
+
+## Color System
+
+Every composition uses a seeded diagonal gradient that sweeps from the upper-left to the lower-right of the grid:
+
+| Direction | Colour shift |
+|-----------|--------------|
+| **Vertical** (top → bottom) | Red channel rises from 10 to 50; green channel falls from 255 to 180 |
+| **Horizontal** (left → right) | Blue channel rises from 200 to 255 |
+| **High-energy cells** | All channels brighten by 30% toward white |
+| **Opacity** | Alpha scales from 100 to 255 with wave amplitude |
+
+The result is a field that reads as both fluid and luminous — a pool whose colours shift with the shape of the wave.
+
+---
+
+## Technical Notes
+
+- Pure vanilla JavaScript — no libraries
+- Canvas 2D rendering
+- Custom xorshift random generator for deterministic seeds
+- Device-pixel-ratio aware rendering
+- Fully static rendering — one seed produces one composition, no animation loops
+- **Master offscreen rendering** — the wave field is simulated once at 1024² and rendered into a master canvas; the cover, framed print, and all four surfaces blit from it
+- **Archive thumbnails** — simulated at 320² with a proportionally smaller grid, then cached
+- 2D wave equation with reflective boundaries at all four edges
+- Oscillating source injection at seeded positions
+- `prefers-reduced-motion` respected
+
+---
+
+## About
+
+**Pool Wind Sun** is a project by [Reyhaneh Daneshdoost](https://reyrove.github.io/) — an Iranian-born artist working at the intersection of classical textile logic and generative systems.
+
+The work begins with a simple observation: the woven surface — repetitive, mathematically structured, infinitely variable — has always been a form of computation, long before computers.
+
+**Pool Wind Sun** is an attempt to render that logic visible.
+
+> *A still pool remembers every drop that fell into it.*
+
+---
+
+## Licensing
+
+All compositions are seed-documented and available for licensing across textile, surface, and apparel applications.
+
+For commercial use, custom editions, or exclusive rights:
+
+📧 **reyhanehdaneshdoost@gmail.com**
+
+See the **Licensing** section in the live catalogue for details.
+
+---
+
+## Links
+
+- 🌐 [Website](https://reyrove.github.io/)
+- 📷 [Instagram](https://www.instagram.com/rey._.rove/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/reyhaneh-daneshdoost-730481160/)
+- 🐦 [X](https://x.com/reyrove)
+
+---
+
+## Credits
+
+**Design & Generative System**  
+Reyhaneh Daneshdoost
+
+**Typefaces**  
+Cormorant Garamond · DM Mono
+
+**Edition**  
+Pool Wind Sun — Autumn 2026
+
+---
+
+<p align="center">
+  <em>Generative Wave Simulation</em><br />
+  <sub>© Reyrove Studio · All compositions reproducible by seed</sub>
+</p>
